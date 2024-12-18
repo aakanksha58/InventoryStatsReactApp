@@ -1,0 +1,83 @@
+/* Dialog Paper */
+.dialog-paper {
+    border-radius: 20px;
+    background-color: #2b2b2b !important;
+    color: #ffffff;
+    padding: 16px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Dialog Title */
+  .dialog-title {
+    padding-bottom: 0;
+  }
+  
+  .dialog-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dialog-title-heading {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  .dialog-subtitle {
+    color: #aaaaaa;
+  }
+  
+  .dialog-close-button {
+    color: #c7ff33;
+    border: 1px solid #c7ff33;
+    border-radius: 50%;
+    padding: 4px;
+  }
+  
+  /* Text Fields */
+  .input-field {
+    background-color: #3b3b3b;
+    color: #ffffff  !important;
+    border-radius: 8px;
+  }
+  
+  .input-label {
+    color: #aaaaaa !important;
+  }
+  
+  /* Field Container */
+  .field-container {
+    margin-top: 8px;
+  }
+  
+  /* Dialog Actions */
+  .dialog-actions {
+    justify-content: space-between;
+    padding: 16px;
+  }
+  
+  /* Buttons */
+  .cancel-button {
+    color: #c7ff33;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  .save-button {
+    background-color: #c7ff33;
+    color: #2b2b2b;
+    font-weight: bold;
+    text-transform: capitalize;
+    border-radius: 8px;
+    padding: 6px 16px;
+  }
+  .cancelButtonDiv {
+    margin-bottom: 8%;
+  }
+  .cancel-button {
+    color: #99c920 !important; /* Neon green */
+  }
+  
+  .input-field .MuiInputBase-input {
+    color: white; /* Set text color to white */
+  }
