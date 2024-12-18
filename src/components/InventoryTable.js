@@ -38,21 +38,20 @@ const StyledTableCell = styled(TableCell)({
 });
 
 const ActionButton = styled(IconButton)(({ theme, disabled, isAdmin }) => ({
-  color: disabled || !isAdmin ? "gray" : "inherit", // Use gray for both disabled state or if not admin
+  color: disabled || !isAdmin ? "gray" : "inherit",
   "&.editIcon": {
-    color: disabled || !isAdmin ? "gray" : "#8d9b4c", // Disabled or non-admin, use gray for Edit
+    color: disabled || !isAdmin ? "gray" : "#8d9b4c",
   },
   "&.viewIcon": {
-    color: disabled || !isAdmin ? "gray" : "purple", // Disabled or non-admin, use gray for View
+    color: disabled || !isAdmin ? "gray" : "pink",
   },
   "&.deleteIcon": {
-    color: disabled || !isAdmin ? "gray" : "red", // Disabled or non-admin, use gray for Delete
+    color: disabled || !isAdmin ? "gray" : "red",
   },
 }));
 
 
 export default function InventoryTable({ isAdmin }) {
-  console.log('Admin',  isAdmin)
   const dispatch = useDispatch();
   const products = useSelector((state) => state.inventory.products);
   const [openDialog, setOpenDialog] = useState(false);
@@ -102,9 +101,9 @@ export default function InventoryTable({ isAdmin }) {
               <TableRow
                 key={product.id}
                 sx={{
-                  backgroundColor: "transparent", // Keep the background color intact
-                  opacity: product.disabled ? 0.5 : 1, // Reduce opacity for disabled rows
-                  pointerEvents: product.disabled ? "none" : "auto", // Prevent interaction with disabled rows
+                  backgroundColor: "transparent",
+                  opacity: product.disabled ? 0.5 : 1,
+                  pointerEvents: product.disabled ? "none" : "auto",
                 }}
               >
                 <StyledTableCell>{product.name}</StyledTableCell>
@@ -112,37 +111,36 @@ export default function InventoryTable({ isAdmin }) {
                 <StyledTableCell align="right">{product.price}</StyledTableCell>
                 <StyledTableCell align="right">{product.quantity}</StyledTableCell>
                 <StyledTableCell align="right">{product.value}</StyledTableCell>
-                {/* Render the actions column for both Admin and User */}
                 <StyledTableCell align="center">
-                <ActionButton
-  onClick={() => handleEdit(product)}
-  aria-label="edit"
-  disabled={product.disabled || !isAdmin} // Disable if not Admin or product is disabled
-  isAdmin={isAdmin} // Pass isAdmin prop here
-  className={product.disabled || !isAdmin ? "disabled editIcon" : "editIcon"}
->
-  <EditIcon />
-</ActionButton>
+                  <ActionButton
+                    onClick={() => handleEdit(product)}
+                    aria-label="edit"
+                    disabled={product.disabled || !isAdmin}
+                    isAdmin={isAdmin}
+                    className={product.disabled || !isAdmin ? "disabled editIcon" : "editIcon"}
+                  >
+                    <EditIcon />
+                  </ActionButton>
 
-<ActionButton
-  onClick={() => handleView(product.id)}
-  aria-label="view"
-  disabled={product.disabled || !isAdmin} // Disable if not Admin or product is disabled
-  isAdmin={isAdmin} // Pass isAdmin prop here
-  className={product.disabled || !isAdmin ? "disabled viewIcon" : "viewIcon"}
->
-  <VisibilityIcon />
-</ActionButton>
+                  <ActionButton
+                    onClick={() => handleView(product.id)}
+                    aria-label="view"
+                    disabled={product.disabled || !isAdmin}
+                    isAdmin={isAdmin}
+                    className={product.disabled || !isAdmin ? "disabled viewIcon" : "viewIcon"}
+                  >
+                    <VisibilityIcon />
+                  </ActionButton>
 
-<ActionButton
-  onClick={() => handleDelete(product.id)}
-  aria-label="delete"
-  disabled={product.disabled || !isAdmin} // Disable if not Admin or product is disabled
-  isAdmin={isAdmin} // Pass isAdmin prop here
-  className={product.disabled || !isAdmin ? "disabled deleteIcon" : "deleteIcon"}
->
-  <DeleteIcon />
-</ActionButton>
+                  <ActionButton
+                    onClick={() => handleDelete(product.id)}
+                    aria-label="delete"
+                    disabled={product.disabled || !isAdmin}
+                    isAdmin={isAdmin}
+                    className={product.disabled || !isAdmin ? "disabled deleteIcon" : "deleteIcon"}
+                  >
+                    <DeleteIcon />
+                  </ActionButton>
                 </StyledTableCell>
               </TableRow>
             ))}
