@@ -5,6 +5,7 @@ import { Switch, Box, Typography, FormControlLabel } from "@mui/material";
 import InventoryTable from "./components/InventoryTable";
 import Widgets from "./components/Widgets"; // Import the Widgets component
 import { useSelector } from "react-redux";
+import LogoutIcon from '@mui/icons-material/Logout';
 import "./App.css"
 
 function App() {
@@ -22,27 +23,40 @@ function App() {
 
   return (
     <div className="AppDiv">
-     
+
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'end', marginBottom: 2 }}>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={isAdmin}
-              onChange={handleSwitchChange}
-              value="admin"
-              color="success"
-            />
-          }
-          label={isAdmin ? "Admin" : "User"}
-          labelPlacement="start" // Admin on the left, User on the right
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginBottom: 2,
-          }}
-        />
+        <div>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={isAdmin}
+                onChange={handleSwitchChange}
+                value="admin"
+                color="success"
+                sx={{
+                  '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+                    backgroundColor: 'green',
+                  },
+                  '& .MuiSwitch-track': {
+                    backgroundColor: 'grey',
+                  },
+                }}
+              />
+            }
+            label={isAdmin ? 'Admin' : 'User'}
+            labelPlacement="start"
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginBottom: 2,
+            }}
+          />
+        </div>
+        <div class="logOutIcon">
+          <LogoutIcon />
+        </div>
       </Box>
-      <Typography variant="h6" sx={{ marginBottom: 2, fontSize: 30}}>
+      <Typography variant="h6" sx={{ marginBottom: 2, fontSize: 30 }}>
         Inventory stats
       </Typography>
 

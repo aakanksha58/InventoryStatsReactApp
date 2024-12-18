@@ -30,9 +30,9 @@ const EditProductDialog = ({ open, handleClose, product }) => {
         if (product) {
             setUpdatedProduct({
                 category: product.category || "",
-                price: product.price ? parseFloat(product.price.replace("$", "")) : "",
+                price: product.price ? typeof product.price !== 'number' ? parseFloat(product.price.replace("$", "")) : product.price : "",
                 quantity: product.quantity || "",
-                value: product.value ? parseFloat(product.value.replace("$", "")) : "",
+                value: product.value ? typeof product.value !== 'number' ? parseFloat(product.value.replace("$", "")) : product.value : "",
             });
         }
     }, [product]);

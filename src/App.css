@@ -35,6 +35,12 @@
 .cancelButtonDiv {
   margin-bottom: 8%;
 }
+.logOutIcon {
+  display: flex;
+  margin-bottom: 1%;
+  margin-left: 2%;
+  color: grey;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
