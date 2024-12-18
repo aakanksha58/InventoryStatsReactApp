@@ -77,3 +77,20 @@
 .input-field .MuiInputBase-input {
     color: white;
 }
+
+.dialog-title {
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.dialog-subtitle {
+    color: white;
+    font-size: 25px;
+}
+
+.save-button {
+    background-color: #3c3c3c;
+    color: grey !important;
+    border-radius: 8px;
+}

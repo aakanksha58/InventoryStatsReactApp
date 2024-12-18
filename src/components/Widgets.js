@@ -11,8 +11,8 @@ const Widgets = ({ totalProducts, totalStoreValue, outOfStock, categories }) => 
         <Box sx={{ flexGrow: 1, marginBottom: 3 }}>
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={6} md={3} >
-                    <Card class="widgetCard">
-                        <CardContent>
+                    <Card >
+                        <CardContent className="widgetCard">
                             <Box sx={{ display: "flex", alignItems: "center" }}>
                                 <ShoppingCartIcon sx={{ fontSize: 40, marginRight: 2 }} />
                                 <Box>
@@ -27,8 +27,8 @@ const Widgets = ({ totalProducts, totalStoreValue, outOfStock, categories }) => 
                 </Grid>
                 {/* Total Store Value Widget */}
                 <Grid item xs={12} sm={6} md={3}>
-                    <Card class="widgetCard">
-                        <CardContent>
+                    <Card >
+                        <CardContent className="widgetCard">
                             <Box sx={{ display: "flex", alignItems: "center" }}>
                                 <CurrencyExchangeIcon sx={{ fontSize: 40, marginRight: 2 }} />
                                 <Box>
@@ -44,8 +44,8 @@ const Widgets = ({ totalProducts, totalStoreValue, outOfStock, categories }) => 
 
                 {/* Out of Stock Widget */}
                 <Grid item xs={12} sm={6} md={3}>
-                    <Card class="widgetCard">
-                        <CardContent>
+                    <Card >
+                        <CardContent className="widgetCard">
                             <Box sx={{ display: "flex", alignItems: "center" }}>
                                 <RemoveShoppingCartIcon sx={{ fontSize: 40, marginRight: 2 }} />
                                 <Box>
@@ -60,8 +60,8 @@ const Widgets = ({ totalProducts, totalStoreValue, outOfStock, categories }) => 
                 </Grid>
                 {/* Categories Widget */}
                 <Grid item xs={12} sm={6} md={3}>
-                    <Card class="widgetCard">
-                        <CardContent>
+                    <Card>
+                        <CardContent className="widgetCard">
                             <Box sx={{ display: "flex", alignItems: "center" }}>
                                 <CategoryIcon sx={{ fontSize: 40, marginRight: 2 }} />
                                 <Box>

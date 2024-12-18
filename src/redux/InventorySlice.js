@@ -49,7 +49,7 @@ function updateWidgets(state) {
   const activeProducts = state.products.filter((product) => !product.disabled);
   state.totalProducts = activeProducts.length;
   state.totalStoreValue = activeProducts.reduce((acc, product) => {
-    const value = parseInt(product.value.replace('$', '').trim()) || 0;
+    const value = typeof product.value !== 'number' ? parseInt(product.value.replace('$', '').trim()) || 0 : product.value
     return acc + value;
   }, 0);
   state.outOfStock = activeProducts.filter(
