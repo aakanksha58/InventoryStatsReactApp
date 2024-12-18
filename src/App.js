@@ -1,6 +1,6 @@
 // src/App.js
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Switch, Box, Typography, FormControlLabel } from "@mui/material";
 import InventoryTable from "./components/InventoryTable";
 import Widgets from "./components/Widgets"; // Import the Widgets component
